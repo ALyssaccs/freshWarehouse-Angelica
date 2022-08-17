@@ -8,23 +8,17 @@ import com.meli.freshWarehouse.model.Product;
 import com.meli.freshWarehouse.repository.ProductRepository;
 import com.meli.freshWarehouse.util.GenerateProduct;
 import com.meli.freshWarehouse.util.GenerateSection;
-import com.meli.freshWarehouse.util.GenerateSeller;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.mockito.*;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
 
 import java.util.List;
-import java.util.Optional;
-import org.springframework.http.HttpStatus;
-
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -186,7 +180,7 @@ class ProductServiceTest {
 
     @Test
     void getProductInAllBatches_ReturnWarehouseProductResponseDto_whenProductExits_andListBatchIsPositive(){
-        BDDMockito.when(sectionService.findById(ArgumentMatchers.anyLong()))
+        BDDMockito.when(sectionService.getById(ArgumentMatchers.anyLong()))
                 .thenReturn(GenerateSection.validSection1());
         BDDMockito.when(productRepository.findById(ArgumentMatchers.anyLong()))
                 .thenReturn(Optional.of(GenerateProduct.validProduct1WithListBatch()));
@@ -200,12 +194,12 @@ class ProductServiceTest {
         assertThat(response.getBatchStockList().size()).isPositive();
         assertThat(response).isInstanceOf(WarehouseProductResponseDTO.class);
 
-        Mockito.verify(sectionService, Mockito.atLeastOnce()).findById(ArgumentMatchers.anyLong());
+        Mockito.verify(sectionService, Mockito.atLeastOnce()).getById(ArgumentMatchers.anyLong());
     }
 
     @Test
     void getProductInAllBatches_ReturnWarehouseProductResponseDto_whenProductExits_andListBatchIsZero(){
-        BDDMockito.when(sectionService.findById(ArgumentMatchers.anyLong()))
+        BDDMockito.when(sectionService.getById(ArgumentMatchers.anyLong()))
                 .thenReturn(GenerateSection.validSection1());
         BDDMockito.when(productRepository.findById(ArgumentMatchers.anyLong()))
                 .thenReturn(Optional.of(GenerateProduct.validProduct1WithListBatchWithDueDateLessThen3weeks()));
@@ -219,12 +213,12 @@ class ProductServiceTest {
         assertThat(response.getBatchStockList().size()).isEqualTo(0);
         assertThat(response).isInstanceOf(WarehouseProductResponseDTO.class);
 
-        Mockito.verify(sectionService, Mockito.atLeastOnce()).findById(ArgumentMatchers.anyLong());
+        Mockito.verify(sectionService, Mockito.atLeastOnce()).getById(ArgumentMatchers.anyLong());
     }
 
     @Test
     void getProductInAllBatches_ReturnException_whenProductDontBelongToTheSection(){
-        BDDMockito.when(sectionService.findById(ArgumentMatchers.anyLong()))
+        BDDMockito.when(sectionService.getById(ArgumentMatchers.anyLong()))
                 .thenReturn(GenerateSection.validSectionToExpection1());
         BDDMockito.when(productRepository.findById(ArgumentMatchers.anyLong()))
                 .thenReturn(Optional.of(GenerateProduct.validProduct1WithListBatchWithDueDateLessThen3weeks()));
@@ -239,12 +233,12 @@ class ProductServiceTest {
         assertThat(exception.getMessage()).
                 isEqualTo("Product doesn't belong to the section id: " + sectionId);
 
-        Mockito.verify(sectionService, Mockito.atLeastOnce()).findById(ArgumentMatchers.anyLong());
+        Mockito.verify(sectionService, Mockito.atLeastOnce()).getById(ArgumentMatchers.anyLong());
     }
 
     @Test
     void getProductInAllBatches_ReturnException_whenBatchDontBelongToTheSection(){
-        BDDMockito.when(sectionService.findById(ArgumentMatchers.anyLong()))
+        BDDMockito.when(sectionService.getById(ArgumentMatchers.anyLong()))
                 .thenReturn(GenerateSection.validSection1());
         BDDMockito.when(productRepository.findById(ArgumentMatchers.anyLong()))
                 .thenReturn(Optional.of(GenerateProduct.validProductToException2()));
@@ -259,12 +253,12 @@ class ProductServiceTest {
         assertThat(exception.getMessage()).
                 isEqualTo("Batch doesn't belong to the section id: " + sectionId);
 
-        Mockito.verify(sectionService, Mockito.atLeastOnce()).findById(ArgumentMatchers.anyLong());
+        Mockito.verify(sectionService, Mockito.atLeastOnce()).getById(ArgumentMatchers.anyLong());
     }
 
     @Test
     void getProductInAllBatches_ReturnWarehouseProductResponseDto_whenProductExits_WithFilter(){
-        BDDMockito.when(sectionService.findById(ArgumentMatchers.anyLong()))
+        BDDMockito.when(sectionService.getById(ArgumentMatchers.anyLong()))
                 .thenReturn(GenerateSection.validSection1());
         BDDMockito.when(productRepository.findById(ArgumentMatchers.anyLong()))
                 .thenReturn(Optional.of(GenerateProduct.validProduct1WithListBatch()));
@@ -278,6 +272,6 @@ class ProductServiceTest {
         assertThat(response.getBatchStockList().size()).isPositive();
         assertThat(response).isInstanceOf(WarehouseProductResponseDTO.class);
 
-        Mockito.verify(sectionService, Mockito.atLeastOnce()).findById(ArgumentMatchers.anyLong());
+        Mockito.verify(sectionService, Mockito.atLeastOnce()).getById(ArgumentMatchers.anyLong());
     }
 }

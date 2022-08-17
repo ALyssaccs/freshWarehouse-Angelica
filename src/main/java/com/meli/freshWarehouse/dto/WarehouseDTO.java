@@ -45,6 +45,12 @@ public class WarehouseDTO {
     }
 
     public Warehouse toModel(){
-        return new Warehouse(this.address, this.city, this.state, this.country, this.number);
+        return Warehouse.builder()
+                .address(this.address)
+                .city(this.city)
+                .state(this.state)
+                .country(this.country)
+                .number(this.number)
+                .build();
     }
 }

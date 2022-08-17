@@ -47,10 +47,6 @@ public class InboundOrderControllerTest {
         assertThat(inboundOrderResponseDtoResponseEntity.getBody().getBatchStockList().get(0).getId()).isPositive();
         assertThat(inboundOrderResponseDtoResponseEntity.getBody().getBatchStockList().get(0).getProductId())
                 .isEqualTo(inboundOrderDtoGenerated.getBatchStockList().stream().findAny().get().getProductId());
-        assertThat(inboundOrderResponseDtoResponseEntity.getBody().getBatchStockList().get(0).getMinimumTemperature())
-                .isEqualTo(inboundOrderDtoGenerated.getBatchStockList().stream().findAny().get().getMinimumTemperature());
-        assertThat(inboundOrderResponseDtoResponseEntity.getBody().getBatchStockList().get(0).getCurrentTemperature())
-                .isEqualTo(inboundOrderDtoGenerated.getBatchStockList().stream().findAny().get().getCurrentTemperature());
         assertThat(inboundOrderResponseDtoResponseEntity.getBody().getBatchStockList().get(0).getInitialQuantity())
                 .isEqualTo(inboundOrderDtoGenerated.getBatchStockList().stream().findAny().get().getInitialQuantity());
         assertThat(inboundOrderResponseDtoResponseEntity.getBody().getBatchStockList().get(0).getCurrentQuantity())
@@ -83,10 +79,6 @@ public class InboundOrderControllerTest {
         assertThat(inboundOrderResponseDtoResponseEntity.getBody().getBatchStockList().get(0).getId()).isPositive();
         assertThat(inboundOrderResponseDtoResponseEntity.getBody().getBatchStockList().get(0).getProductId())
                 .isEqualTo(inboundOrderDtoGenerated.getBatchStockList().stream().findAny().get().getProductId());
-        assertThat(inboundOrderResponseDtoResponseEntity.getBody().getBatchStockList().get(0).getMinimumTemperature())
-                .isEqualTo(inboundOrderDtoGenerated.getBatchStockList().stream().findAny().get().getMinimumTemperature());
-        assertThat(inboundOrderResponseDtoResponseEntity.getBody().getBatchStockList().get(0).getCurrentTemperature())
-                .isEqualTo(inboundOrderDtoGenerated.getBatchStockList().stream().findAny().get().getCurrentTemperature());
         assertThat(inboundOrderResponseDtoResponseEntity.getBody().getBatchStockList().get(0).getInitialQuantity())
                 .isEqualTo(inboundOrderDtoGenerated.getBatchStockList().stream().findAny().get().getInitialQuantity());
         assertThat(inboundOrderResponseDtoResponseEntity.getBody().getBatchStockList().get(0).getCurrentQuantity())

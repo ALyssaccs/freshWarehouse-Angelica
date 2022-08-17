@@ -39,13 +39,4 @@ public class Warehouse {
     @JsonIgnore
     private Set<Section> listSection;
 
-
-    public Warehouse(String address, String city, String state, String country, Integer number) {
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.country = country;
-        this.number = number;
-    }
-
 }

@@ -1,18 +1,19 @@
 {
 	"info": {
-		"_postman_id": "9f32fad7-2d37-4876-8967-e84276d361ad",
-		"name": "FreshWarehouse - CRUD Product",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "ef4bdfdd-440f-4936-85a3-b7d94b6e89ff",
+		"name": "02 Section CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21558482"
 	},
 	"item": [
 		{
-			"name": "Post Product",
+			"name": "New Section",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Toddy\",\n    \"price\": 10.00,\n    \"sectionId\": 1,\n    \"sellerId\": 1\n\n}",
+					"raw": "{\n    \"name\": \"10 Seção dez\",\n    \"availableSpace\": 67,\n    \"idWarehouse\": 1\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,7 +21,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/fresh-products/product",
+					"raw": "http://localhost:8080/api/v1/fresh-products/section",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -30,19 +31,19 @@
 						"api",
 						"v1",
 						"fresh-products",
-						"product"
+						"section"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Delete product",
+			"name": "Get All Section",
 			"request": {
-				"method": "DELETE",
+				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/fresh-products/product/1",
+					"raw": "http://localhost:8080/api/v1/fresh-products/section",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -52,7 +53,29 @@
 						"api",
 						"v1",
 						"fresh-products",
-						"product",
+						"section"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Section By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/fresh-products/section/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"fresh-products",
+						"section",
 						"1"
 					]
 				}
@@ -60,58 +83,13 @@
 			"response": []
 		},
 		{
-			"name": "Get all products",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/fresh-products/product",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"fresh-products",
-						"product"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get product by id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/fresh-products/product/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"fresh-products",
-						"product",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Product",
+			"name": "New Request",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Nesquick\",\n    \"price\": 5.00,\n    \"sectionId\": 1,\n    \"sellerId\": 1\n\n}",
+					"raw": "{\n    \"name\": \"2 Seção 7\",\n    \"availableSpace\": 27,\n    \"idWarehouse\": 1\n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -119,7 +97,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/fresh-products/product/3",
+					"raw": "http://localhost:8080/api/v1/fresh-products/section/7",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -129,8 +107,31 @@
 						"api",
 						"v1",
 						"fresh-products",
-						"product",
-						"3"
+						"section",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/fresh-products/section/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"fresh-products",
+						"section",
+						"6"
 					]
 				}
 			},

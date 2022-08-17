@@ -22,6 +22,9 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "minimum_temperature")
+    private Float minimumTemperature;
+
     @Column(name = "name", nullable = false)
     @NotBlank(message = "Name is mandatory")
     @Size(max = 50, message = "Product name cannot exceed 45 characters")

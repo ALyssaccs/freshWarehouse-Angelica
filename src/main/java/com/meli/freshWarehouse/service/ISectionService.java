@@ -15,7 +15,7 @@ public interface ISectionService {
 
     List<Section> getAllSection();
 
-    Section findById(Long id);
+    Section getById(Long id);
 
     Section updateSection(Long id, SectionDto section);
 

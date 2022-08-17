@@ -1,18 +1,19 @@
 {
 	"info": {
-		"_postman_id": "35e0fe9f-e253-4d82-8d0e-057c72a77950",
-		"name": "TS05-warehouse-crud",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "8e330d3d-a0f1-43aa-b573-814f17cb5bb5",
+		"name": "03 Representativa CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21558482"
 	},
 	"item": [
 		{
-			"name": "saveWarehouse",
+			"name": "save",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"address\": \"Address\",\n    \"city\": \"Campinas\",\n    \"state\": \"SP\",\n    \"country\": \"Brasil\",\n    \"number\": 30\n}",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"warehouseId\": 1\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,7 +21,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/fresh-products/warehouse",
+					"raw": "http://localhost:8080/api/v1/fresh-products/representative",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -30,19 +31,19 @@
 						"api",
 						"v1",
 						"fresh-products",
-						"warehouse"
+						"representative"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "listAllWarehouse",
+			"name": "findALL",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/fresh-products/warehouse",
+					"raw": "http://localhost:8080/api/v1/fresh-products/representative",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -52,19 +53,19 @@
 						"api",
 						"v1",
 						"fresh-products",
-						"warehouse"
+						"representative"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "getStockOfProductById",
+			"name": "findById",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/fresh-products/warehouse/product-quantity/2",
+					"raw": "http://localhost:8080/api/v1/fresh-products/representative/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -74,31 +75,7 @@
 						"api",
 						"v1",
 						"fresh-products",
-						"warehouse",
-						"product-quantity",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getWarehouseById",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/fresh-products/warehouse/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"fresh-products",
-						"warehouse",
+						"representative",
 						"1"
 					]
 				}
@@ -106,13 +83,13 @@
 			"response": []
 		},
 		{
-			"name": "UpdateWarehouse",
+			"name": "update",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": 1,\n    \"address\": \"QSA 13\",\n    \"city\": \"Taguatinga\",\n    \"state\": \"DF\",\n    \"country\": \"Brasil\",\n    \"number\": 29\n}",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"warehouseId\": 2\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -120,7 +97,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/fresh-products/warehouse",
+					"raw": "http://localhost:8080/api/v1/fresh-products/representative/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -130,7 +107,31 @@
 						"api",
 						"v1",
 						"fresh-products",
-						"warehouse"
+						"representative",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/fresh-products/representative/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"fresh-products",
+						"representative",
+						"1"
 					]
 				}
 			},

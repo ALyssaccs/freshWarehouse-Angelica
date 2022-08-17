@@ -86,7 +86,7 @@ class SectionServiceTest {
                 .thenReturn(Optional.ofNullable(GenerateSection.validSection1()));
 
         Section section = GenerateSection.validSection1();
-        Section sectionResponse = sectionService.findById(section.getId());
+        Section sectionResponse = sectionService.getById(section.getId());
 
         assertThat(sectionResponse).isNotNull();
         assertThat(sectionResponse.getId()).isEqualTo(section.getId());
@@ -98,7 +98,7 @@ class SectionServiceTest {
         String expectedMessage = "Section not found by id: " + 3L;
 
         Exception exception = assertThrows(SectionIdNotFoundException.class,
-                () -> sectionService.findById(3L).getId());
+                () -> sectionService.getById(3L).getId());
 
         assertThat(exception.getMessage()).isEqualTo(expectedMessage);
     }
@@ -116,7 +116,7 @@ class SectionServiceTest {
                 .thenReturn(Optional.ofNullable(GenerateSection.validSection1()));
 
         Section section = GenerateSection.validSection1();
-        Section sectionUpdated = sectionService.findById(section.getId());
+        Section sectionUpdated = sectionService.getById(section.getId());
 
         SectionDto sectionDtoUpdated = SectionDto.builder()
                 .name("New section")

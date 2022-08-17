@@ -18,8 +18,6 @@ public class GenerateBachStock {
 
     public static Batch newBatch1() {
         return Batch.builder()
-                .currentTemperature(24F)
-                .minimumTemperature(25F)
                 .initialQuantity(2)
                 .currentQuantity(2)
                 .manufacturingDate(LocalDate.parse("2021-06-03T14:24:54"))
@@ -33,8 +31,6 @@ public class GenerateBachStock {
 
     public static Batch newBatch2() {
         return Batch.builder()
-                .minimumTemperature(15F)
-                .currentTemperature(18F)
                 .initialQuantity(4)
                 .currentQuantity(5)
                 .manufacturingDate(LocalDate.parse("2021-06-03"))
@@ -50,8 +46,6 @@ public class GenerateBachStock {
         List<Batch> batchDtoList = new ArrayList<>();
         Batch batchResponse1 = Batch.builder()
                 .id(1L)
-                .currentTemperature(22.0F)
-                .minimumTemperature(25.0F)
                 .initialQuantity(2)
                 .currentQuantity(2)
                 .manufacturingDate(LocalDate.parse("2022-05-24"))
@@ -86,8 +80,6 @@ public class GenerateBachStock {
 
         BatchDto batchDto1 = BatchDto.builder()
                 .productId(1L)
-                .minimumTemperature(25F)
-                .currentTemperature(14F)
                 .initialQuantity(25)
                 .currentQuantity(25)
                 .manufacturingDate("2021-06-03")
@@ -97,8 +89,6 @@ public class GenerateBachStock {
 
         BatchDto batchDto2 = BatchDto.builder()
                 .productId(1L)
-                .minimumTemperature(15F)
-                .currentTemperature(18F)
                 .initialQuantity(4)
                 .currentQuantity(5)
                 .manufacturingDate("2021-06-03")
@@ -119,8 +109,6 @@ public class GenerateBachStock {
 
         BatchDto batchDto1 = BatchDto.builder()
                 .productId(1L)
-                .minimumTemperature(25F)
-                .currentTemperature(14F)
                 .initialQuantity(2)
                 .currentQuantity(2)
                 .manufacturingDate("2021-06-03")
@@ -130,8 +118,6 @@ public class GenerateBachStock {
 
         BatchDto batchDto2 = BatchDto.builder()
                 .productId(1L)
-                .minimumTemperature(15F)
-                .currentTemperature(18F)
                 .initialQuantity(4)
                 .currentQuantity(5)
                 .manufacturingDate("2021-06-03")
@@ -151,8 +137,6 @@ public class GenerateBachStock {
         Set<Batch> batchSet = new HashSet<>();
         batchSet.add(Batch.builder()
                 .id(1L)
-                .minimumTemperature(25F)
-                .currentTemperature(14F)
                 .initialQuantity(2)
                 .currentQuantity(2)
                 .manufacturingDate(LocalDate.parse("2021-06-03T14:10:14"))
@@ -163,8 +147,6 @@ public class GenerateBachStock {
 
         batchSet.add(Batch.builder()
                 .id(1L)
-                .minimumTemperature(15F)
-                .currentTemperature(18F)
                 .initialQuantity(4)
                 .currentQuantity(5)
                 .manufacturingDate(LocalDate.parse("2021-06-03T14:24:54"))

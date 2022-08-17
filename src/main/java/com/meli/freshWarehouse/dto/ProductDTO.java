@@ -32,6 +32,8 @@ public class ProductDTO {
     @Min(value = 0, message = "Seller Id must be a positive number.")
     private Long sellerId;
 
+    @NotNull
+    private Float minimumTemperature;
 
     @Deprecated
     public ProductDTO() {

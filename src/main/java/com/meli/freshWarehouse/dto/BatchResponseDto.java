@@ -14,8 +14,6 @@ public class BatchResponseDto {
 
     private Long id;
     private Long productId;
-    private Float currentTemperature;
-    private Float minimumTemperature;
     private Integer initialQuantity;
     private Integer currentQuantity;
     private LocalDate manufacturingDate;

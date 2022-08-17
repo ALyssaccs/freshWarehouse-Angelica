@@ -186,4 +186,42 @@ public class ExceptionHandlerController {
 
     }
 
+    @ExceptionHandler({ColdRoomNotFoundException.class})
+    public ResponseEntity<ExceptionDetails> handlerColdRoomIdNotFoundEx(ColdRoomNotFoundException ex) {
+
+        return new ResponseEntity<>(ExceptionDetails.builder()
+                .title("Cold Room ID not found.")
+                .status(HttpStatus.NOT_FOUND.value())
+                .message(ex.getMessage())
+                .localDateTime(LocalDateTime.now())
+                .build(),
+                HttpStatus.NOT_FOUND
+        );
+    }
+
+    @ExceptionHandler({SellerNotFoundException.class})
+    public ResponseEntity<ExceptionDetails> handlerSellerIdNotFoundEx(SellerNotFoundException ex) {
+
+        return new ResponseEntity<>(ExceptionDetails.builder()
+                .title("Seller ID not found.")
+                .status(HttpStatus.NOT_FOUND.value())
+                .message(ex.getMessage())
+                .localDateTime(LocalDateTime.now())
+                .build(),
+                HttpStatus.NOT_FOUND
+        );
+    }
+
+    @ExceptionHandler({RepresentativeNotFoundException.class})
+    public ResponseEntity<ExceptionDetails> handlerRepresentativeIdNotFoundEx(RepresentativeNotFoundException ex) {
+
+        return new ResponseEntity<>(ExceptionDetails.builder()
+                .title("Representative ID not found.")
+                .status(HttpStatus.NOT_FOUND.value())
+                .message(ex.getMessage())
+                .localDateTime(LocalDateTime.now())
+                .build(),
+                HttpStatus.NOT_FOUND
+        );
+    }
 }

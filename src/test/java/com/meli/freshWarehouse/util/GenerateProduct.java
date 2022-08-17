@@ -88,8 +88,6 @@ public class GenerateProduct {
 
         Batch batchResponse1 = Batch.builder()
                 .id(1L)
-                .minimumTemperature(25F)
-                .currentTemperature(14F)
                 .initialQuantity(2)
                 .currentQuantity(2)
                 .manufacturingDate(LocalDate.parse("2021-06-03"))
@@ -102,8 +100,6 @@ public class GenerateProduct {
 
         Batch batchResponse2 = Batch.builder()
                 .id(2L)
-                .minimumTemperature(15F)
-                .currentTemperature(18F)
                 .initialQuantity(4)
                 .currentQuantity(5)
                 .manufacturingDate(LocalDate.parse("2021-06-03"))
@@ -133,8 +129,6 @@ public class GenerateProduct {
 
         Batch batchResponse1 = Batch.builder()
                 .id(1L)
-                .minimumTemperature(25F)
-                .currentTemperature(14F)
                 .initialQuantity(2)
                 .currentQuantity(2)
                 .manufacturingDate(LocalDate.parse("2021-06-03"))
@@ -147,8 +141,6 @@ public class GenerateProduct {
 
         Batch batchResponse2 = Batch.builder()
                 .id(2L)
-                .minimumTemperature(15F)
-                .currentTemperature(18F)
                 .initialQuantity(4)
                 .currentQuantity(5)
                 .manufacturingDate(LocalDate.parse("2021-06-03"))
@@ -178,8 +170,6 @@ public class GenerateProduct {
 
         Batch batchResponse1 = Batch.builder()
                 .id(1L)
-                .minimumTemperature(25F)
-                .currentTemperature(14F)
                 .initialQuantity(2)
                 .currentQuantity(2)
                 .manufacturingDate(LocalDate.parse("2021-06-03"))

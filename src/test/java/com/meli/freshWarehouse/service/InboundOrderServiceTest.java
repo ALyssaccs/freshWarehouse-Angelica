@@ -49,7 +49,7 @@ public class InboundOrderServiceTest {
     @BeforeEach
     private void setup() {
 
-        BDDMockito.when(sectionService.findById(ArgumentMatchers.anyLong()))
+        BDDMockito.when(sectionService.getById(ArgumentMatchers.anyLong()))
                 .thenReturn(GenerateSection.validSection1());
 
         BDDMockito.when(orderService.save(ArgumentMatchers.any()))
@@ -141,8 +141,6 @@ public class InboundOrderServiceTest {
         InboundOrderDto inboundOrderDto = GenerateInboundOrder.inboundOrderDto();
 
         inboundOrderDto.getBatchStockList().forEach(p -> {
-            p.setCurrentTemperature(22.0F);
-            p.setMinimumTemperature(25.0F);
             p.setInitialQuantity(2);
             p.setCurrentQuantity(2);
             p.setManufacturingDate("2022-05-24");

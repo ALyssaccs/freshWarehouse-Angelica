@@ -17,12 +17,6 @@ public class Batch {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "current_temperature")
-    private Float currentTemperature;
-
-    @Column(name = "minimum_temperature")
-    private Float minimumTemperature;
-
     @Column(name = "initial_quantity")
     private Integer initialQuantity;
 

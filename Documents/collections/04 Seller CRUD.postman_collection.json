@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "61fadcd4-9c79-4b23-95f4-c7b6b96f5d79",
-		"name": "FreshProducts - CRUD Seller",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "f0107ffe-f56e-43a5-9900-d458bef2b5dc",
+		"name": "04 Seller CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21558482"
 	},
 	"item": [
 		{

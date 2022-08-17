@@ -37,7 +37,7 @@ public class InboundOrderService implements IInboundOrderService {
     public InboundOrderResponseDto save(InboundOrderDto inboundOrderDto) {
 
         Representative representative = representativeService.findById(inboundOrderDto.getRepresentativeId());
-        Section section = sectionService.findById(inboundOrderDto.getSectionId());
+        Section section = sectionService.getById(inboundOrderDto.getSectionId());
 
         orderIsValid(representative, section);
 
@@ -72,8 +72,6 @@ public class InboundOrderService implements IInboundOrderService {
                         BatchResponseDto.builder()
                                 .id(b.getId())
                                 .productId(b.getProduct().getId())
-                                .currentTemperature(b.getCurrentTemperature())
-                                .minimumTemperature(b.getMinimumTemperature())
                                 .initialQuantity(b.getInitialQuantity())
                                 .currentQuantity(b.getCurrentQuantity())
                                 .manufacturingDate(b.getManufacturingDate())
@@ -91,11 +89,9 @@ public class InboundOrderService implements IInboundOrderService {
                         .section(order.getSection())
                         .product(validateProduct(productService.getProductById(b.getProductId()), section))
                         .currentQuantity(b.getCurrentQuantity())
-                        .currentTemperature(b.getCurrentTemperature())
                         .initialQuantity(b.getInitialQuantity())
                         .manufacturingDate(LocalDate.parse(b.getManufacturingDate(),
                                 DateTimeFormatter.ofPattern("yyyy-MM-dd")))
-                        .minimumTemperature(b.getMinimumTemperature())
                         .dueDate(LocalDate.parse(b.getDueDate(),
                                 DateTimeFormatter.ofPattern("yyyy-MM-dd")))
                         .manufacturingTime(LocalDateTime.parse(b.getManufacturingTime(),
@@ -141,7 +137,7 @@ public class InboundOrderService implements IInboundOrderService {
     public InboundOrderResponseDto update(Long id, InboundOrderDto inboundOrderDto) {
         Order order = this.getInboundOrderById(id);
         Representative representative = representativeService.findById(inboundOrderDto.getRepresentativeId());
-        Section section = sectionService.findById(inboundOrderDto.getSectionId());
+        Section section = sectionService.getById(inboundOrderDto.getSectionId());
 
         orderIsValid(representative, section);
 

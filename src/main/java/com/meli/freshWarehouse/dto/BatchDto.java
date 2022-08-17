@@ -18,12 +18,6 @@ public class BatchDto {
     @NotNull(message = "The field is not null.")
     private Long productId;
 
-    @NotNull(message = "The field is not null.")
-    private Float currentTemperature;
-
-    @NotNull
-    private Float minimumTemperature;
-
     @NotNull
     @Positive
     private Integer initialQuantity;

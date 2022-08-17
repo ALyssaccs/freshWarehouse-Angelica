@@ -41,6 +41,7 @@ public class ProductService implements IProductService {
 
         Product product = Product.builder()
                 .name(productDto.getName())
+                .minimumTemperature(productDto.getMinimumTemperature())
                 .sections(sections)
                 .seller(seller)
                 .price(productDto.getPrice())
@@ -150,7 +151,7 @@ public class ProductService implements IProductService {
     @Override
     public WarehouseProductResponseDTO getProductInAllBatches(Long id, Long idSection, String filter) {
         Product product = this.getProductById(id);
-        Section section = sectionService.findById(idSection);
+        Section section = sectionService.getById(idSection);
 
         validateSectionWithProduct(product,section);
         validateSectionWithBatch(product.getListBatch(),section);

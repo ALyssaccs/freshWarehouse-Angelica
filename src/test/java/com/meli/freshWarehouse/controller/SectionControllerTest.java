@@ -59,7 +59,7 @@ public class SectionControllerTest {
 
     @Test
     public void getSectionById() {
-        BDDMockito.when(service.findById(ArgumentMatchers.anyLong()))
+        BDDMockito.when(service.getById(ArgumentMatchers.anyLong()))
                 .thenReturn(GenerateSection.validSection1());
 
         Section section = GenerateSection.validSection1();
@@ -70,7 +70,7 @@ public class SectionControllerTest {
         assertThat(response.getBody().getName()).isEqualTo(section.getName());
         assertThat(response.getBody().getId()).isEqualTo(section.getId());
 
-        Mockito.verify(service, Mockito.atLeastOnce()).findById(ArgumentMatchers.anyLong());
+        Mockito.verify(service, Mockito.atLeastOnce()).getById(ArgumentMatchers.anyLong());
     }
 
     @Test

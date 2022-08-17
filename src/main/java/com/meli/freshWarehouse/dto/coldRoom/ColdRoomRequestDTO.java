@@ -37,8 +37,8 @@ public class ColdRoomRequestDTO {
                 .roomVolume(this.roomVolume)
                 .acquisitionDate(this.acquisitionDate)
                 .model(this.model)
-                .active(this.active)
-                .lastRevision(this.lastRevision)
+                .active(this.active != null && this.active)
+                .lastRevision(this.lastRevision == null? acquisitionDate : this.lastRevision)
                 .build();
     }
 

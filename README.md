@@ -6,6 +6,9 @@
 
 O FreshWarehouse é uma aplicação feita para ajudar a administrar um estoque de produtos frescos em um Marketplace. Consultando sua API é possivel passar por todo o processo desde quando um vendedor cadastra um produto, até ele ser adicionado em um lote, enviado para um armazem, até ser adicionado em um carrinho de compras por um usuário.
 
+Foi desenvolvida uma feature para gerenciamento das camaras frias do depósito. É possível criar, listar todas, obter por id, atualizar dados, ativar ou desativar, registar vistoria e alterar temperatura das camaras frias, via endpoints implementados.
+
+User Story pode ser encontrada em: https://github.com/ALyssaccs/freshWarehouse-Angelica/blob/develop/Documents/Cold%20Room%20Management.pdf
 
 ## Tecnologias Utilizadas
 
@@ -14,12 +17,14 @@ O projeto foi desenvolvido utilizando o framework [Spring](https://spring.io/pro
 ## Documentação
 
 Documentação da API foi feita em JavaDoc, assim como as collections do postman para fazerem as requisições podem ser encontradas em: [Documentos](https://github.com/javatastico/freshWarehouse/tree/develop/Documents).
+Também está disponível documentação em Swagger, que pode ser encontrada em: 
+(http://localhost:8080/swagger-ui/index.html).
 
 
 ## UML
 
 <p align="center">
-  <img src="https://github.com/javatastico/freshWarehouse/blob/develop/Documents/UML.png?raw=true">
+  <img src="https://github.com/ALyssaccs/freshWarehouse-Angelica/blob/develop/Documents/freshWarehouse-entities.png?raw=true">
 </p>
 
 ## Licença

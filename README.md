@@ -8,6 +8,7 @@ O FreshWarehouse é uma aplicação feita para ajudar a administrar um estoque d
 
 Foi desenvolvida uma feature para gerenciamento das camaras frias do depósito. É possível criar, listar todas, obter por id, atualizar dados, ativar ou desativar, registar vistoria e alterar temperatura das camaras frias, via endpoints implementados.
 
+User Story pode ser encontrada em: https://github.com/ALyssaccs/freshWarehouse-Angelica/blob/develop/Documents/Cold%20Room%20Management.pdf
 
 ## Tecnologias Utilizadas
 

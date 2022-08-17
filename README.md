@@ -23,7 +23,7 @@ Também está disponível documentação em Swagger, que pode ser encontrada em:
 ## UML
 
 <p align="center">
-  <img src="https://github.com/javatastico/freshWarehouse/blob/develop/Documents/UML.png?raw=true">
+  <img src="https://github.com/ALyssaccs/freshWarehouse-Angelica/blob/develop/Documents/freshWarehouse-entities.png?raw=true">
 </p>
 
 ## Licença

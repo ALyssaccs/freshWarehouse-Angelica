@@ -29,9 +29,6 @@ public class ColdRoomServiceTest {
     @Mock
     private ColdRoomRepo coldRoomRepo;
 
-    @Mock
-    private ISectionRepo iSectionRepo;
-
     private static Warehouse warehouse = Warehouse.builder()
             .id(1L)
             .address("TestAdress")
